@@ -55,10 +55,17 @@ export default {
   },
   methods: {
     clear() {
+      this.textToConvert = ''
+      this.fullWidth = ''
+      this.halfWidth = ''
     },
     async paste() {
+      this.textToConvert = await navigator.clipboard.readText()
     },
     convert() {
+      const src = this.textToConvert
+      this.fullWidth = src
+      this.halfWidth = src
     }
   }
 }
