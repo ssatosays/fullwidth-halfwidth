@@ -10,7 +10,7 @@
         </tr>
         <tr>
           <th>
-            <textarea v-model="textToConvert" placeholder="edit me"></textarea>
+            <textarea v-model="textToConvert" placeholder="edit me" ref="t2c"></textarea>
           </th>
         </tr>
       </thead>
@@ -53,6 +53,9 @@ export default {
       halfWidth: ''
     }
   },
+  mounted() {
+    this.$refs.t2c.focus()
+  },
   methods: {
     clear() {
       this.textToConvert = ''
@@ -91,7 +94,6 @@ export default {
   margin-left: 30px;
   margin-right: 30px;
 }
-
 table {
   background: #f2f2f2;
   border-radius: 5px;
@@ -101,25 +103,25 @@ table {
   padding: 10px;
   width: 100%;
 }
-
 th {
   text-align: left;
 }
-
 td {
   width: 50%;
 }
-
 button {
   font-size: 1rem;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 50px;
 }
-
 textarea {
+  font-size: 1rem;
   min-height: 100px;
   height: 100%;
   width: 95%;
+}
+textarea:focus {
+  outline-color: #42b883;
 }
 </style>
