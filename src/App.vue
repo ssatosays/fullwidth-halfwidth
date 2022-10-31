@@ -62,10 +62,20 @@ export default {
     async paste() {
       this.textToConvert = await navigator.clipboard.readText()
     },
+    toFullWidth(str) {
+      return str.replace(/[A-Za-z0-9]/g, (s) => {
+          return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+      });
+    },
+    toHalfWidth(str) {
+      return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => {
+          return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+      });
+    },
     convert() {
       const src = this.textToConvert
-      this.fullWidth = src
-      this.halfWidth = src
+      this.fullWidth = this.toFullWidth(src)
+      this.halfWidth = this.toHalfWidth(src)
     }
   }
 }
