@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>fullwidth-halfwidth</h1>
+    <h4>- Convert alphanumeric characters only</h4>
     <table>
       <thead>
         <tr>
@@ -40,6 +41,11 @@
         </tr>
       </tbody>
     </table>
+    <footer>
+      <div>
+        <a href="https://github.com/ssatosays/fullwidth-halfwidth">ssatosays/fullwidth-halfwidth</a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -123,5 +129,13 @@ textarea {
 }
 textarea:focus {
   outline-color: #42b883;
+}
+footer div {
+  margin-top: 50px;
+  text-align: center;
+}
+footer div a {
+  color: inherit;
+  text-decoration: none;
 }
 </style>
